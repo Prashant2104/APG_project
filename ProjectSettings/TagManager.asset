@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Platform
   - Water
+  - Bullet
+  - Target
   layers:
   - Default
   - TransparentFX

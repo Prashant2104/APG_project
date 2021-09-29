@@ -30,7 +30,7 @@ public class Crosshair : MonoBehaviour
     {
         RotateGun();
 
-        RayCasting();
+        //RayCasting();
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -46,11 +46,25 @@ public class Crosshair : MonoBehaviour
 
     void RotateGun()
     {
-        if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hitInfo))
+        if (Physics.Raycast(cam.position, cam.forward * 10f, out RaycastHit hitInfo))
         {
-            Vector3 direction = hitInfo.point - Gun.position;
-            Gun.rotation = Quaternion.LookRotation(direction);
+            //Vector3 direction = hitInfo.point - Gun.position;
+            //Gun.rotation = Quaternion.LookRotation(direction);
+
+            var Target = hitInfo.transform;
+
+            if (Target.CompareTag("Target"))
+            {
+                Reticle.color = new Color(0, 255, 0, 255);
+                Cross.color = new Color(0, 255, 0, 200);
+            }
+            else
+            {
+                Reticle.color = new Color(255, 255, 255, 255);
+                Cross.color = new Color(0, 0, 255, 200);
+            }
         }
+        Debug.DrawRay(cam.position, cam.forward * 10f, Color.red);
     }
 
     void Shoot()
@@ -61,8 +75,8 @@ public class Crosshair : MonoBehaviour
             BulletsLeft--;
         }
 
-        /*Debug.Log("F = " + Cross.fillAmount);*/
-        Debug.Log("B = " + BulletsLeft);
+        /*Debug.Log("F = " + Cross.fillAmount);
+        Debug.Log("B = " + BulletsLeft);*/
     }
 
     void Reload()
@@ -73,13 +87,13 @@ public class Crosshair : MonoBehaviour
         Debug.Log("B = " + BulletsLeft);*/
     }
 
-    void RayCasting()
+    /*void RayCasting()
     {
         Ray ray = new Ray(ShootPoint.position, ShootPoint.forward);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             var Target = hit.transform;
-            /*if (Target.CompareTag("Zombie"))
+            if (Target.CompareTag("Zombie"))
             {
                 Reticle.color = new Color(255, 0, 0, 255);
                 Cross.color = new Color(255, 0, 0, 200);
@@ -88,13 +102,13 @@ public class Crosshair : MonoBehaviour
             {
                 Reticle.color = new Color(0, 255, 0, 255);
                 Cross.color = new Color(0, 255, 0, 200);
-            }*/
-            //else
+            }
+            else
             {
                 Reticle.color = new Color(255, 255, 255, 255);
                 Cross.color = new Color(0, 0, 255, 200);
             }
         }
-        Debug.DrawRay(ShootPoint.position, ShootPoint.forward * 100f, Color.red);
-    }
+        Debug.DrawRay(ShootPoint.position, ShootPoint.forward * 10f, Color.red);
+    }*/
 }

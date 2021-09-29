@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         //transform.Translate(translation: InputDirection * speed * Time.deltaTime);
         //transform.Translate(inputDirection * speed * Time.deltaTime);
 
-        Vector3 InputDirection = new Vector3(x: Input.GetAxisRaw("Horizontal"), y: 0, z: Input.GetAxisRaw("Vertical")).normalized;        
+        Vector3 InputDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;        
         float InputMagnitude = InputDirection.magnitude;
         smoothinputMagnitude = Mathf.SmoothDamp(smoothinputMagnitude, InputMagnitude, ref smoothmoveVelocity, smoothmoveTime);
         float targetAngle = Mathf.Atan2(InputDirection.x, InputDirection.z) * Mathf.Rad2Deg;

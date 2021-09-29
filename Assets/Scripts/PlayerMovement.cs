@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Water")]
-    [SerializeField] LayerMask waterCheck;
     [SerializeField] Transform Respawn;
+    public bool isWater;
 
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
@@ -49,6 +49,14 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     RaycastHit slopeHit;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+
+        Respawn.position = gameObject.transform.position;
+    }
 
     private bool OnSlope()
     {
@@ -64,12 +72,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         return false;
-    }
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
     }
 
     private void Update()
@@ -157,10 +159,10 @@ public class PlayerMovement : MonoBehaviour
            gameObject.transform.parent = other.transform;
         }
 
-        /*if (other.CompareTag("Water"))
+        if (other.CompareTag("Water"))
         {
             gameObject.transform.position = Respawn.position;
-        }*/
+        }
     }
 
     private void OnTriggerExit(Collider other)
