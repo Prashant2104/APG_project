@@ -5,6 +5,8 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     public Vector3 InitialPos, CurrentPos;
+    public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,15 +17,24 @@ public class TargetController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(CurrentPos.x <= InitialPos.x + 10f)
+        transform.Translate(speed, 0, 0);
+        CurrentPos.x += speed;
+
+        if(CurrentPos.x >= InitialPos.x + 10f)
         {
-            transform.Translate(+0.1f, 0, 0);
-            CurrentPos.x += 0.1f;
+            speed = -speed;
         }
-        else if (CurrentPos.x >= InitialPos.x - 10f)
+        else if (CurrentPos.x <= InitialPos.x - 10f)
         {
-            transform.Translate(-0.1f, 0, 0);
-            CurrentPos.x -= 0.1f;
+            speed = -speed;
         }
     }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            gameObject.SetActive(false);
+        }
+    }*/
 }
