@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Water")]
     [SerializeField] private Transform Respawn;
-    private bool isWater;
 
     private Camera playerCam;
     private CharacterController characterController;
@@ -150,24 +149,21 @@ public class PlayerController : MonoBehaviour
 
         duringCrouchAnim = false;
     }
-    private void OnTriggerEnter(Collider other)
+    public void Respawner()
     {
-        /*if (other.CompareTag("Platform"))
-        {
-            gameObject.transform.parent = other.transform;
-        }*/
-
-        if (other.CompareTag("Water"))
-        {
-            gameObject.transform.position = Respawn.position;
-        }
+        gameObject.transform.position = Respawn.position;
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnControllerColliderHit(ControllerColliderHit col)
     {
-        if (other.CompareTag("Platform"))
+        if (col.gameObject.CompareTag("Water"))
         {
-            gameObject.transform.parent = null;
+            Debug.Log("water");
+            gameObject.transform.position = Respawn.position;
+        }
+        if (col.gameObject.CompareTag("Platform"))
+        {
+            gameObject.transform.parent = col.transform;
         }
     }
 }

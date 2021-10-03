@@ -7,9 +7,12 @@ public class TargetController : MonoBehaviour
     public Vector3 InitialPos, CurrentPos;
     public float speed;
 
+    public float health;
+    private GameManager GM;
     // Start is called before the first frame update
     void Start()
     {
+        GM = FindObjectOfType<GameManager>();
         InitialPos = gameObject.transform.position;
         CurrentPos = gameObject.transform.position;
     }
@@ -30,11 +33,16 @@ public class TargetController : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter(Collision collision)
+    public void TakeDamage(float damage)
     {
-        if(collision.gameObject.CompareTag("Bullet"))
+        health -= damage;
+        if(health <= 0)
         {
+            if(gameObject.CompareTag("Zombie"))
+            {
+                GM.ZombiesKilled++;
+            }
             gameObject.SetActive(false);
         }
-    }*/
+    }
 }

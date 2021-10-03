@@ -20,7 +20,7 @@ public class MovingPlatform : MonoBehaviour
     void FixedUpdate()
     {
         speedMultiplier = speed / Vector3.Distance(start.position, end.position);
-        t = t + Time.deltaTime; // Use speedMultiplier here instead!
+        t += Time.deltaTime; // Use speedMultiplier here instead!
 
         // Cosine range: -1 to +1 // 2
         // Needed range: 0 to 1   // 1

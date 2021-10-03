@@ -6,14 +6,16 @@ public class PlayerCollider : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.CompareTag("Platform"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            gameObject.GetComponentInParent<Transform>().transform.parent = other.transform;
-            //gameObject.transform.parent = other.transform;
-        }*/
-        if (other.CompareTag("Water"))
+            FindObjectOfType<PlayerController>().Respawner();
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            gameObject.transform.position = new Vector3(10, 10, 10);
+            FindObjectOfType<PlayerController>().Respawner();
         }
     }
 }
