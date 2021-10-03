@@ -8,6 +8,7 @@ public class PlayerCollider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Trigger water");
             FindObjectOfType<PlayerController>().Respawner();
         }
     }
@@ -15,6 +16,15 @@ public class PlayerCollider : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Collision water");
+            FindObjectOfType<PlayerController>().Respawner();
+        }
+    }
+    void OnControllerColliderHit(ControllerColliderHit col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Controller water");
             FindObjectOfType<PlayerController>().Respawner();
         }
     }

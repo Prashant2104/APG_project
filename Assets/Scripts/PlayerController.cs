@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private bool duringCrouchAnim;
 
     [Header("Water")]
-    [SerializeField] private Transform Respawn;
+    public Vector3 Spawn;
 
     private Camera playerCam;
     private CharacterController characterController;
@@ -60,7 +60,10 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Respawn.position = gameObject.transform.position;
+    }
+    private void Start()
+    {
+        Spawn = this.gameObject.transform.position;
     }
 
     void Update()
@@ -151,19 +154,9 @@ public class PlayerController : MonoBehaviour
     }
     public void Respawner()
     {
-        gameObject.transform.position = Respawn.position;
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit col)
-    {
-        if (col.gameObject.CompareTag("Water"))
-        {
-            Debug.Log("water");
-            gameObject.transform.position = Respawn.position;
-        }
-        if (col.gameObject.CompareTag("Platform"))
-        {
-            gameObject.transform.parent = col.transform;
-        }
+        characterController.enabled = false;
+        Debug.Log("Respawn called");
+        this.gameObject.transform.position = Spawn;
+        characterController.enabled = true;
     }
 }

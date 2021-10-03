@@ -17,7 +17,14 @@ public class Boxes : Interactable
 
     void ChangeColor()
     {
-        GM.BoxCollected++;
+        if (gameObject.CompareTag("Gun"))
+        {
+            GM.GunCollected = true;
+        }
+        else
+        {
+            GM.BulletCollected++;
+        }
         //gameObject.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 0, 255);
         gameObject.SetActive(false);
     }

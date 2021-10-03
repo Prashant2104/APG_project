@@ -17,6 +17,8 @@ public class Gun : MonoBehaviour
     float BulletsLeft;
 
     public GameObject ReloadText;
+    public GameObject FlashLight;
+    public bool IsLightOn;
 
     public bool ScopeIn;
 
@@ -25,6 +27,7 @@ public class Gun : MonoBehaviour
     {
         GM = FindObjectOfType<GameManager>();
         ScopeIn = false;
+        IsLightOn = false;
         Reticle.color = new Color(255, 255, 255, 255);
         Cross.color = new Color(0, 0, 255, 200);
         BulletsLeft = Bullets;
@@ -33,8 +36,21 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if (GM.Puzzle1 == true)
+        if (IsLightOn && GM.GunCollected)
         {
+            FlashLight.SetActive(true);
+        }
+        else
+        {
+            FlashLight.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            IsLightOn = !IsLightOn;
+        }
+
+        if (GM.Puzzle2 == true)
+        {           
             if (Input.GetKeyDown(KeyCode.Mouse0) && BulletsLeft > 0)
             {
                 if (ScopeIn == false)
