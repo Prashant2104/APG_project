@@ -1298,7 +1298,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61fee938d7dd83645a785e0f3f9c2dbf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.57
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1665,6 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19ab478bdad42b448ed79ff8ff2e939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1983943434}
   BulletCollected: 0
   GunCollected: 0
   ZombiesKilled: 0
@@ -1681,7 +1682,7 @@ MonoBehaviour:
   GameOverText: {fileID: 2074194353}
   GameOverPanel: {fileID: 1868503546}
   PausePanel: {fileID: 443134441}
-  Player: {fileID: 1983943435}
+  PlayerCtrl: {fileID: 1983943435}
   PlayerGun: {fileID: 210886639}
   Flashlight: {fileID: 871604843}
   CollectableGun: {fileID: 597911889}
@@ -2476,7 +2477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42b78005774e57940a61c637b40ebef6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.57
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4553,7 +4554,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 832cf3e79b8388547a21fa4ff738e29c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.57
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6076,7 +6077,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 832cf3e79b8388547a21fa4ff738e29c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.57
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8546,13 +8547,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bdb8e1dde8ed71e429642339ab522660, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9377,7 +9378,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 61fee938d7dd83645a785e0f3f9c2dbf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.57
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10001,7 +10002,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42b78005774e57940a61c637b40ebef6, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.57
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject Player;
+
     public float BulletCollected;
     public bool GunCollected;
     public float ZombiesKilled;
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
     public GameObject GameOverPanel;
 
     public GameObject PausePanel;
-    public CharacterController Player;
+    public CharacterController PlayerCtrl;
 
     public GameObject PlayerGun;
     public GameObject Flashlight;
@@ -86,17 +88,24 @@ public class GameManager : MonoBehaviour
         }
         if (IsPaused)
         {
-            Player.enabled = false;
+            PlayerCtrl.enabled = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
-            Player.enabled = true;
+            PlayerCtrl.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false; ;
         }
 
+        if(GameOverPanel.activeInHierarchy == true)
+        {
+            PlayerCtrl.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Player.SetActive(false);
+        }
 
         if (Input.GetKeyDown(KeyCode.F) && GunCollected == false)
         {

@@ -44,8 +44,6 @@ public class TargetController : MonoBehaviour
             if(gameObject.CompareTag("Civilian"))
             {
                 GM.GameOverPanel.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
             }
             gameObject.SetActive(false);
         }
