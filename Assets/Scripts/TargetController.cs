@@ -9,7 +9,7 @@ public class TargetController : MonoBehaviour
 
     public float health;
     private GameManager GM;
-    // Start is called before the first frame update
+
     void Start()
     {
         GM = FindObjectOfType<GameManager>();
@@ -17,7 +17,6 @@ public class TargetController : MonoBehaviour
         CurrentPos = gameObject.transform.position;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         transform.Translate(speed, 0, 0);
@@ -42,6 +41,10 @@ public class TargetController : MonoBehaviour
             {
                 GM.ZombiesKilled++;
             }
+            /*if(gameObject.CompareTag("Bulb"))
+            {
+                
+            }*/
             gameObject.SetActive(false);
         }
     }

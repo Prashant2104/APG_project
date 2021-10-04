@@ -21,6 +21,10 @@ public class Boxes : Interactable
         {
             GM.GunCollected = true;
         }
+        else if(gameObject.CompareTag("Book"))
+        {
+            GM.BookPanel.SetActive(true);
+        }
         else
         {
             GM.BulletCollected++;

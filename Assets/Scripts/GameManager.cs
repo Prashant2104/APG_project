@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     public GameObject Zombies;
     public GameObject Civilians;
 
+    public GameObject Book;
+    public GameObject BookPanel;
+
     public Text ScoreText;
     public GameObject ScorePanel;
 
@@ -36,6 +39,9 @@ public class GameManager : MonoBehaviour
         Zombies.SetActive(false);
         Civilians.SetActive(false);
 
+        Book.SetActive(true);
+        BookPanel.SetActive(false);
+
         IsFlashOn = true;
         Puzzle1 = false;
         Puzzle2 = false;
@@ -52,6 +58,22 @@ public class GameManager : MonoBehaviour
         {
             IsFlashOn = !IsFlashOn;
             Flashlight.transform.GetChild(0).gameObject.SetActive(IsFlashOn);
+        }
+
+        if(BookPanel.activeInHierarchy == true)
+        {
+            Puzzle1 = true;
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                BookPanel.SetActive(false);
+            }
+            Book.SetActive(false);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Book.SetActive(true);
+            Time.timeScale = 1f;
         }
 
         if(BulletCollected >= BulletCount)
