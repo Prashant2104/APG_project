@@ -273,11 +273,12 @@ GameObject:
   - component: {fileID: 3831019648159348587}
   - component: {fileID: 3831019648159348586}
   - component: {fileID: 3831019648159348581}
+  - component: {fileID: 2100930298013807981}
   - component: {fileID: 3831019648159348580}
   - component: {fileID: 3831019648159348583}
   m_Layer: 0
   m_Name: Ladder
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,6 +347,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2100930298013807981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831019648159348582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &3831019648159348580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -386,10 +399,11 @@ GameObject:
   - component: {fileID: 3831019648250892986}
   - component: {fileID: 3831019648250892981}
   - component: {fileID: 3831019648250892980}
+  - component: {fileID: 6760726018180412661}
   - component: {fileID: 3831019648250892983}
   m_Layer: 0
   m_Name: Stool (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -458,6 +472,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6760726018180412661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831019648250892982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &3831019648250892983
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -483,11 +509,12 @@ GameObject:
   - component: {fileID: 3831019648257925810}
   - component: {fileID: 3831019648257925773}
   - component: {fileID: 3831019648257925772}
+  - component: {fileID: 6672683859412273615}
   - component: {fileID: 3831019648257925775}
   - component: {fileID: 3831019648257925774}
   m_Layer: 0
   m_Name: Barrel 1
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -555,6 +582,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6672683859412273615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831019648257925769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &3831019648257925775
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -596,12 +635,13 @@ GameObject:
   - component: {fileID: 3831019648296042131}
   - component: {fileID: 3831019648296042130}
   - component: {fileID: 3831019648296075629}
+  - component: {fileID: 5355737957793591835}
   - component: {fileID: 3831019648296075628}
   - component: {fileID: 3831019648296075631}
   - component: {fileID: 3831019648296075630}
   m_Layer: 0
   m_Name: door
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -669,6 +709,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5355737957793591835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831019648296075625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &3831019648296075628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -710,7 +762,7 @@ HingeJoint:
   m_Anchor: {x: -2.39, y: 1.23, z: 3.12}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 440.2919, y: 5.0166492, z: 263.26102}
+  m_ConnectedAnchor: {x: 2.0886695, y: 1.086649, z: -1.6584069}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -745,11 +797,12 @@ GameObject:
   - component: {fileID: 3831019648355056446}
   - component: {fileID: 3831019648355056441}
   - component: {fileID: 3831019648355056440}
+  - component: {fileID: 4514649662523723535}
   - component: {fileID: 3831019648355056443}
   - component: {fileID: 3831019648355056442}
   m_Layer: 0
   m_Name: Barrel 1 (2)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -817,6 +870,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4514649662523723535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831019648355056437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &3831019648355056443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -858,11 +923,12 @@ GameObject:
   - component: {fileID: 3831019649526857984}
   - component: {fileID: 3831019649526857987}
   - component: {fileID: 3831019649526857986}
+  - component: {fileID: 166830141466574782}
   - component: {fileID: 3831019649526858013}
   - component: {fileID: 3831019649526858012}
   m_Layer: 0
   m_Name: Barrel 1 (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -930,6 +996,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &166830141466574782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831019649526858015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &3831019649526858013
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -971,11 +1049,12 @@ GameObject:
   - component: {fileID: 3647983248375948885}
   - component: {fileID: 364764058471705072}
   - component: {fileID: 2516124279160560954}
+  - component: {fileID: 5207593420911288349}
   - component: {fileID: 3831019648611902878}
   - component: {fileID: 3831019648611902850}
   m_Layer: 0
   m_Name: Table 2
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1043,6 +1122,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5207593420911288349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4173690902951656687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &3831019648611902878
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2506,10 +2597,11 @@ GameObject:
   - component: {fileID: 9037431318131738427}
   - component: {fileID: 7115349056999080291}
   - component: {fileID: 5499366924435310059}
+  - component: {fileID: 4211495774197679527}
   - component: {fileID: 9030900879420384628}
   m_Layer: 0
   m_Name: Stool
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2578,6 +2670,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4211495774197679527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030900879420384631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &9030900879420384628
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2604,9 +2708,10 @@ GameObject:
   - component: {fileID: 6997187054503340296}
   - component: {fileID: 5761337428846226816}
   - component: {fileID: 6579638752631161369}
+  - component: {fileID: 250615331728607886}
   m_Layer: 0
   m_Name: House
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2707,3 +2812,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8089699231438940418, guid: 22f4c99a3ca59f14a9c34501b9752391, type: 3}
+--- !u!114 &250615331728607886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147365314582285596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9afe1b417106ed4dbce4f81adb90f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

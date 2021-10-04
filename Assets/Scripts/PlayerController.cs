@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
     private bool ShouldJump => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchAnim && characterController.isGrounded;
+    public bool IsRunning;
+    public bool IsWalking;
 
     [Header("Functional Options")]
     [SerializeField] private bool canSprint = true;
@@ -46,6 +48,9 @@ public class PlayerController : MonoBehaviour
     [Header("Water")]
     public Vector3 Spawn;
 
+    public AudioClip[] audioClips;
+
+    private AudioSource audioSource;
     private Camera playerCam;
     private CharacterController characterController;
 
@@ -58,12 +63,10 @@ public class PlayerController : MonoBehaviour
     {
         playerCam = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
+        Spawn = this.gameObject.transform.position;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
-    private void Start()
-    {
-        Spawn = this.gameObject.transform.position;
     }
 
     void Update()
@@ -81,6 +84,19 @@ public class PlayerController : MonoBehaviour
                 HandleCrouch();
 
             ApplyFinalMovement();
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (moveDirection != Vector3.zero && IsSprinting == false)
+        {
+            audioSource.clip = audioClips[0];
+            audioSource.Play();
+        }
+        if (moveDirection != Vector3.zero && IsSprinting)
+        {
+            audioSource.clip = audioClips[1];
+            audioSource.Play();
         }
     }
 
@@ -155,7 +171,7 @@ public class PlayerController : MonoBehaviour
     public void Respawner()
     {
         characterController.enabled = false;
-        Debug.Log("Respawn called");
+        //Debug.Log("Respawn called");
         this.gameObject.transform.position = Spawn;
         characterController.enabled = true;
     }

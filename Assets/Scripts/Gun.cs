@@ -25,9 +25,11 @@ public class Gun : MonoBehaviour
 
     private GameManager GM;
     public GunMuzzleFlash muzzleFlash;
+    private AudioManager audioManager;
     void Start()
     {
         GM = FindObjectOfType<GameManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         ScopeIn = false;
         IsLightOn = false;
         Reticle.color = new Color(255, 255, 255, 255);
@@ -49,19 +51,20 @@ public class Gun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             IsLightOn = !IsLightOn;
+            audioManager.Interacted();
         }
 
         if (GM.Puzzle2 == true)
         {           
             if (Input.GetKeyDown(KeyCode.Mouse0) && BulletsLeft > 0)
             {
+                audioManager.Shooting();
                 BulletsLeft--;
                 muzzleFlash.StartFiring();
 
                 if (ScopeIn == false)
                 {
                     Shoot();
-                    muzzleFlash.StartFiring();
                 }
             }
             if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -96,7 +99,7 @@ public class Gun : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.R))
             {
-                Reload();
+                StartCoroutine(Reload());
             }
         }
 
@@ -115,10 +118,15 @@ public class Gun : MonoBehaviour
         Reticle.enabled = true;
         if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out RaycastHit hit, Range))
         {
+            //Debug.Log("gun = " + hit.transform.gameObject.transform.name);
             TargetController target = hit.transform.GetComponent<TargetController>();
             if (target != null)
             {
                 target.TakeDamage(DamageAmount);
+                if(target.gameObject.CompareTag("Bulb"))
+                {
+                    audioManager.BulbShatter();
+                }
             }
         }
     }
@@ -126,26 +134,33 @@ public class Gun : MonoBehaviour
     {
         if (Physics.Raycast(GunCam.transform.position, GunCam.transform.forward, out RaycastHit hitInfo, ScopeRange))
         {
+            //Debug.Log("scope = "+hitInfo.transform.gameObject.transform.name);
             TargetController target = hitInfo.transform.GetComponent<TargetController>();
           
             if (Input.GetKeyDown(KeyCode.Mouse0) && BulletsLeft > 0)
             {
                 if (target != null)
                 {
-                    target.TakeDamage(DamageAmount);
+                    target.TakeDamage(DamageAmount); 
+                    if (target.gameObject.CompareTag("Bulb"))
+                    {
+                        audioManager.BulbShatter();
+                    }
                 }
             }
         }
     }   
-    void Reload()
+    IEnumerator Reload()
     {
+        audioManager.Reloading();
+        yield return new WaitForSeconds(0.65f);
         BulletsLeft = Bullets;
         ReloadText.SetActive(false);
     }
     void RayCasting()
     {
-        Debug.DrawRay(Cam.transform.position, Cam.transform.forward * Range, Color.red);
-        Debug.DrawRay(GunCam.transform.position, GunCam.transform.forward * ScopeRange, Color.green);
+        //Debug.DrawRay(Cam.transform.position, Cam.transform.forward * Range, Color.red);
+        //Debug.DrawRay(GunCam.transform.position, GunCam.transform.forward * ScopeRange, Color.green);
         if (Physics.Raycast(Cam.transform.position, Cam.transform.forward, out RaycastHit hit, Range) && ScopeIn == false)
         {
             TargetController target = hit.transform.GetComponent<TargetController>();

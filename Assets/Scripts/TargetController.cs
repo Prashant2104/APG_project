@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    public Vector3 InitialPos, CurrentPos;
-    public float speed;
+    //public Vector3 InitialPos, CurrentPos;
+    //public float speed;
 
     public float health;
     private GameManager GM;
@@ -13,11 +13,11 @@ public class TargetController : MonoBehaviour
     void Start()
     {
         GM = FindObjectOfType<GameManager>();
-        InitialPos = gameObject.transform.position;
-        CurrentPos = gameObject.transform.position;
+        //InitialPos = gameObject.transform.position;
+        //CurrentPos = gameObject.transform.position;
     }
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         transform.Translate(speed, 0, 0);
         CurrentPos.x += speed;
@@ -30,7 +30,7 @@ public class TargetController : MonoBehaviour
         {
             speed = -speed;
         }
-    }
+    }*/
 
     public void TakeDamage(float damage)
     {
@@ -41,10 +41,12 @@ public class TargetController : MonoBehaviour
             {
                 GM.ZombiesKilled++;
             }
-            /*if(gameObject.CompareTag("Bulb"))
+            if(gameObject.CompareTag("Civilian"))
             {
-                
-            }*/
+                GM.GameOverPanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
             gameObject.SetActive(false);
         }
     }

@@ -8,24 +8,16 @@ public class PlayerCollider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Trigger water");
+            //Debug.Log("Trigger water");
             FindObjectOfType<PlayerController>().Respawner();
         }
+        
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Wood") && collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision water");
-            FindObjectOfType<PlayerController>().Respawner();
-        }
-    }
-    void OnControllerColliderHit(ControllerColliderHit col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Controller water");
-            FindObjectOfType<PlayerController>().Respawner();
+            Debug.Log("Wood");
         }
     }
 }

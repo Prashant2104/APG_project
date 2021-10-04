@@ -11,6 +11,9 @@ TagManager:
   - Zombie
   - Gun
   - Book
+  - Bulb
+  - Wood
+  - Civilian
   layers:
   - Default
   - TransparentFX
